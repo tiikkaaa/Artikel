@@ -16,15 +16,17 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         nav {
             display: flex;
             justify-content: center;
             background-color: #444;
-            padding: 5px 0;
+            padding: 10px 0;
+            border-radius: 8px;
         }
 
         nav a {
@@ -37,35 +39,41 @@
 
         main {
             display: flex;
-            padding: 20px;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 0 20px;
         }
 
         article {
             flex: 2;
             background-color: #fff;
             padding: 20px;
-            margin-right: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
         aside {
             flex: 1;
             background-color: #f0f0f0;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
         footer {
             background-color: #ff0000;
-            color: #000000;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Halaman Kompleks</h1>
+        <form action="proses_pencarian.php" method="GET">
+            <input type="text" name="query" placeholder="Cari...">
+            <button type="submit">Cari</button>
+        </form>
     </header>
     <nav>
         <a href="#">Beranda</a>
@@ -76,6 +84,15 @@
         <article>
             <h2>Artikel 1</h2>
             <p>Ini adalah artikel pertama pada halaman kompleks ini. Isinya bisa berupa teks panjang dan konten yang beragam.</p>
+            <div id="komentar">
+                <h3>Komentar</h3>
+                <form action="proses_komentar.php" method="POST">
+                    <input type="text" name="nama" placeholder="Nama">
+                    <textarea name="komentar" placeholder="Tulis komentar Anda"></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+                <!-- List komentar akan ditampilkan di sini -->
+            </div>
         </article>
         <aside>
             <h3>Widget Sidebar</h3>
@@ -84,6 +101,12 @@
                 <li>Widget 2</li>
                 <li>Widget 3</li>
             </ul>
+            <div id="galeri-foto">
+                <h3>Galeri Foto</h3>
+                <img src="foto1.jpg" alt="Foto 1">
+                <img src="foto2.jpg" alt="Foto 2">
+                <img src="foto3.jpg" alt="Foto 3">
+            </div>
         </aside>
     </main>
     <footer>
